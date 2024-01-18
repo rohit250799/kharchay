@@ -1,6 +1,15 @@
 from django.db import models
 
 # Create your models here.
+class Category(models.Model):
+    name = models.CharField(max_length = 150)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name_plural = 'Categories'
+
+
+
 class Book(models.Model):
     id = models.BigIntegerField(primary_key=True)
     title = models.CharField(max_length = 200)
