@@ -23,28 +23,12 @@
     <p class="mx-4 bg-red-400">This is for the dashboard template to be used in the application</p>
 
     <div class="m-4 p-2 bg-blue-200">
-        <form method="post" id="my_form">
-            <!--<p>What do you want to do?</p>
-            <input type="radio" name="intent" id="create" value="create" onselect="myFunction()">
-            <label for="create">Create</label> <br>
-            <input type="radio" name="intent" id="read" value="read" onselect="myFunction()">
-            <label for="read">Read</label> <br>
-            <input type="radio" name="intent" id="update" value="update" onselect="myFunction()">
-            <label for="update">Update</label> <br>
-            <input type="radio" name="intent" id="delete" value="delete" onselect="myFunction()">
-            <label for="delete">Delete</label> <br> -->
+        <a href="{% url 'book:create' %}">Create</a>
 
-            <!--<input type="text" name="intent" id="create" value="create" onselect="myFunction()">
-            <input type="text" name="intent" id="read" value="read" onselect="myFunction()">
-            <input type="text" name="intent" id="update" value="update" onselect="myFunction()">
-            <input type="text" name="intent" id="delete" value="delete" onselect="myFunction()"> -->
-            
-            <label for="name">Enter your name:</label>
-            <input type="text" name="name" id="name">
-
-            <!--<input type="submit" value="submit" class="center"> -->
             <button type="submit">submit</button>
         </form>
+
+        <a href="{% url 'book:detail' %}">Details</a>
 
     </div> 
 
