@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-2#u2ihjm1p)z0oxkbbb8#45okutz(poz=cmj+^-ak6szi_nu4e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,6 +77,7 @@ WSGI_APPLICATION = 'kharchay_code.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+""""
 DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.postgresql',
@@ -87,7 +89,11 @@ DATABASES = {
         'DEBUG': os.environ.get('DB_DEBUG'),
     }
 }
+"""
 
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -124,6 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = 'media/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'kharchay_code/static')]
 
 # Default primary key field type
