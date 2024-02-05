@@ -11,6 +11,7 @@ import os
 import sys
 
 from django.core.wsgi import get_wsgi_application
+#from kharchay_root.wsgi import 
 
 path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if path not in sys.path:
