@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'expenses',
+    'kharchay_root',
     'authenticationApp',
     
 ]
@@ -79,19 +80,6 @@ WSGI_APPLICATION = 'kharchay_root.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-""""
-DATABASES = {
-    'default':{
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_USER_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': '',
-        'DEBUG': os.environ.get('DB_DEBUG'),
-    }
-}
-"""
 
 DATABASES = {
     "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
